@@ -1,21 +1,46 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'authentication/styles.css' %}" />
     <title>Login</title>
 </head>
-<body>
-    
-    <form method="post" action="">
-        {{form.as_p}}
-        {%  csrf_token %}
-        <button type="submit">Se connecter</button>
+<body>      
+    <div class = "center">
 
-    </form>
-    {%  if user.is_authenticated %}
-            <p>Vous êtes connecté en tant que {{ request.user }}. <a href="{% url 'logout' %}">Se déconnecter</a></p>
-        {% endif %}
+        <h1>Login</h1>
+
+        <form method="post" >
+
+            <div class="txt_field">
+                <input type="text" name = "username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id ="id_username">
+                <span></span>
+                <label for="id_username">Nom d'utilisateur</label>
+                
+            </div>
+            <div class="txt_field">
+                
+                <input type="password" name = "password"  autocomplete="current-password"  required id ="id_password">
+                <span></span>
+                <label for="id_password">Mot de pass:</label>
+            </div>
+            
+           <div class="pass">Forgot Password !</div>
+           <input type="submit" value="Login">
+            {%  csrf_token %}
+            <div class="signup_link">
+                    Not a member ! <a href="{% url 'signup' %}">Signup</a>
+
+            </div> 
+        </form>
+
+
+    </div>
+    
+
 </body>
 </html>
