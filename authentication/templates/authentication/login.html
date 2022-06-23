@@ -11,7 +11,9 @@
 </head>
 <body>      
     <div class = "center">
-
+        {%  if user.is_authenticated %}
+        <p>Vous êtes connecté en tant que {{ request.user }}. <a href="{% url 'logout' %}">Se déconnecter</a></p>
+        {% endif %}
         <h1>Login</h1>
 
         <form method="post" >
@@ -36,6 +38,7 @@
                     Not a member ! <a href="{% url 'signup' %}">Signup</a>
 
             </div> 
+            
         </form>
 
 
