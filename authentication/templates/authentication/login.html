@@ -19,17 +19,19 @@
         <form method="post" >
 
             <div class="txt_field">
-                <input type="text" name = "username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id ="id_username">
+                {{ form.username }}
                 <span></span>
-                <label for="id_username">Nom d'utilisateur</label>
+                <label for="{{ form.username.id_for_label }}">{{form.username.label}} :</label>
                 
             </div>
             <div class="txt_field">
-                
-                <input type="password" name = "password"  autocomplete="current-password"  required id ="id_password">
+                {{ form.password }}
                 <span></span>
-                <label for="id_password">Mot de pass:</label>
+                <label for="{{ form.password.id_for_label }}">{{form.password.label}} :</label>
+                
             </div>
+
+            
             
            <div class="pass">Forgot Password !</div>
            <input type="submit" value="Login">
