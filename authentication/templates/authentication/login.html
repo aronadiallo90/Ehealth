@@ -17,8 +17,16 @@
         <h1>Login</h1>
 
         <form method="post" >
+             {% for field in form %}
+                    <div class="txt_field">
+                        {{ field}}
+                        <span></span>
+                        <label for="{{ field.id_for_label }}">{{field.label}} :</label>
+                       
+                    </div>
+            {% endfor %}
 
-            <div class="txt_field">
+            <!-- <div class="txt_field">
                 {{ form.username }}
                 <span></span>
                 <label for="{{ form.username.id_for_label }}">{{form.username.label}} :</label>
@@ -29,7 +37,7 @@
                 <span></span>
                 <label for="{{ form.password.id_for_label }}">{{form.password.label}} :</label>
                 
-            </div>
+            </div> -->
 
             
             

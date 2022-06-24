@@ -19,64 +19,16 @@
         <h1>Signup</h1>
 
         <form method="post" >
-
-            <div class="txt_field">
-                <input type="text" name = "username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id ="id_username">
-                <span></span>
-                <label for="id_username">Nom d'utilisateur</label>      
-            </div>
-
-
-
-            <div class="txt_field">
-                <input type="email" name = "email"    maxlength="254"  required id ="id_email">
-                <span></span>
-                <label for="id_email">Adresse électronique</label>      
-            </div>
+            {% for field in form %}
+                    <div class="txt_field">
+                        {{ field}}
+                        <span></span>
+                        <label for="{{ field.id_for_label }}">{{field.label}} :</label>
+                    
+                    </div>
+            {% endfor %}
 
            
-
-            <div class="txt_field">
-                <input type="first_name" name = "first_name"   maxlength="150" required id ="id_first_name">
-                <span></span>
-                <label for="id_first_name">Prénom</label>      
-            </div>
-
-            <div class="txt_field">
-                <input type="last_name" name = "last_name"   maxlength="150" required id ="id_last_name">
-                <span></span>
-                <label for="id_last_name">Nom</label>      
-            </div>
-
-
-            <div class="txt_field">
-                <select name="role" required id="id_role">
-                    <option value selected >Role</option>
-                    <option value="CREATOR">Docteur</option>
-                    <option value="SUBSCRIBER">Abonné</option>
-                    
-                </select>
-                
-                <span></span>
-                     
-            </div>
-
-
-
-            <div class="txt_field">
-                
-                <input type="password1" name = "password1"  autocomplete="new-password"  required id ="id_password1" aria-autocomplete="list">
-                <span></span>
-                <label for="id_password1">Mot de pass:</label>
-            </div>
-
-            <div class="txt_field">
-                
-                <input type="password2" name = "password2"  autocomplete="new-password"  required id ="id_password2">
-                <span></span>
-                <label for="id_password2">Confirmer Mot de pass:</label>
-            </div>
-
 
 
 
