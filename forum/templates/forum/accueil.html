@@ -9,7 +9,7 @@
 <body>
 
  
-        <h1>Blogs</h1>
+        <h1>E-Forum</h1>
         
         <ul>
             {% for blog in blogs %}
@@ -39,6 +39,13 @@
                                     
                                      
                               </li>
+                              <form action="" method="post" >
+                                {% csrf_token %}
+                                {{ form1.as_p}}
+                                <input type="hidden" name="blog" value = "{{ blog.id}}">
+                                               
+                                <input type="submit" value="Envoyer">
+                              </form>
                     {% endfor %}
                     
                 
@@ -50,10 +57,21 @@
                 
               </li>
               
+
             {% endfor %}
+            
           </ul>
+          <br><br><br>
        
-  
+  <p>
+      Créer une blog
+      <form action="" method="post" >
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" value="Envoyer">
+      </form>
+
+  </p>
   </form>
 </body>
 </html>

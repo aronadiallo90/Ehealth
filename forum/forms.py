@@ -1,15 +1,15 @@
 from django import forms
 
-from forum.models import *
+from . import models
 
 
 
 class BlogForm(forms.ModelForm):
     class Meta:
-        model = Blog
-        fields = '__all__'
+        model = models.Blog
+        fields = ['title', 'blog_photo']
 
 class MessageForm(forms.ModelForm):
     class Meta:   
-        model = Message
-        fields = '__all__'
+        model = models.Message
+        fields = ('content',) 
